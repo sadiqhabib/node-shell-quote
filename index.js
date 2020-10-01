@@ -1,4 +1,5 @@
 exports.quote = function (xs) {
+    xs = Array.isArray(xs) ? xs : [xs];
     return xs.map(function (s) {
         if (s && typeof s === 'object') {
             return s.op.replace(/(.)/g, '\\$1');
